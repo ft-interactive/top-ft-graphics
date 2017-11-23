@@ -5,7 +5,7 @@
 <h1 class="o-typography-headline" itemprop="headline">{{ headline | md(true) }}</h1>
 
 <p class="o-typography-standfirst">
-  {{ summary | md(true) }}
+  {{ summary | md(true) | safe }}
   {% if relatedArticle %}
   <a href="{{ relatedArticle.url }}" class="o-typography-link">{{ relatedArticle.text }}</a>
   {% endif %}
@@ -27,10 +27,10 @@
 {% endif %}
 
 {%- if publishedDate -%}
-<span data-o-component="o-date" class="o-date o-typography-timestamp" datetime="{{ publishedDate | isotime }}">{{ publishedDate | ftdate }}</span>
+Last update: <span data-o-component="o-date" class="o-date o-typography-timestamp" datetime="{{ publishedDate | isotime }}">{{ publishedDate | ftdate }}</span>
 {%- endif -%}
 {%- if byline -%}
-<div class="o-typography-author">&nbsp;by&nbsp;
+<!-- <div class="o-typography-author">&nbsp;by&nbsp;
 {%- if byline.push -%}
   {%- for author in byline -%}
     {{ " and " if not loop.first and loop.last else (", " if not loop.first else "") }}
@@ -43,5 +43,5 @@
 {%- else -%}
   {{ byline | md(true) }}
 {%- endif -%}
-</div>
+</div> -->
 {%- endif -%}

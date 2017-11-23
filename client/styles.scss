@@ -2,16 +2,25 @@
 @import 'o-grid/main';
 @import 'components/core/main';
 
-/*
-      TODO: delete this comment
+#topgraphics {
+  margin-top: 1em;
+  margin-bottom: 3em;
 
-      Write your code here - keep it neat!
-      Split logical parts of you project into components e.g.
+  .topgraphic {
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
 
-      /client
-        - /components
-            - /component-name
-                - styles.scss
-                - index.js
-                - template.html
-*/
+    a {
+      border-bottom: none;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .topgraphic__sharecount {
+      text-align: center;
+    }
+  }
+}

@@ -41,6 +41,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.4",
     "d3-time-format": "^2.0.5",
+    "dotenv": "^4.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
     "eslint-plugin-babel": "^4.1.1",
@@ -91,6 +92,5 @@
     "pretest": "npm run build",
     "qa": "mocha ./test/**/*.spec.js",
     "start": "webpack-dev-server --watch"
-  },
-  "dependencies": {}
+  }
 }
