@@ -4,7 +4,7 @@
 {% block article_body %}
 
 <div class="o-grid-container">
-  <div <div class="o-grid-row" id="topgraphics">
+  <div class="o-grid-row" id="topgraphics">
     {% for graphic in filteredTopGraphics %}
     <div class="topgraphic" data-o-grid-colspan="12 S6 M3">
       <a target="_blank" href="https://ft.com{{graphic['page.location.pathname']}}"><img src="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A{{graphic['context.imageuuid']}}?source=ig" /></a>
