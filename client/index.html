@@ -7,7 +7,11 @@
   <div class="o-grid-row" id="topgraphics">
     {% for graphic in filteredTopGraphics %}
     <div class="topgraphic" data-o-grid-colspan="12 S6 M3">
-      <a target="_blank" href="https://ft.com{{graphic['page.location.pathname']}}"><img src="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A{{graphic['context.imageuuid']}}?source=ig" /></a>
+      <a target="_blank" href="https://ft.com{{graphic['page.location.pathname']}}">
+        <img src="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A{{graphic['context.imageuuid']}}?source=ig" />
+        <h4>{{ graphic['content.title'] }}</h4>
+        <span data-o-component="o-date" class="o-date o-typography-timestamp" datetime="{{ graphic['content.publishedDate'] | isotime }}">{{ graphic['content.publishedDate'] | ftdate }}</span>
+      </a>
       <div class="topgraphic__sharecount">Shares: {{ graphic.result }}</div>
     </div>
     {% endfor %}
