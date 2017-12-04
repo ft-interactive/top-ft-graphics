@@ -11,7 +11,7 @@ export default async (environment = 'development') => {
 
   dotenv.load({ silent: true });
 
-  const topGraphics = (await axios(`https://api.keen.io/3.0/projects/56671212d2eaaa6dd6483dae/queries/count?event_collection=cta%3Aclick&group_by=%5B%22context.imageuuid%22%2C%22page.location.pathname%22%2C%22content.publishedDate%22%2C%22content.title%22%2C%22content.uuid%22%2C%22content.uuid%22%5D&timezone=UTC&timeframe=this_14_days&filters=%5B%7B%22property_name%22%3A%22click.dataTrackablePath%22%2C%22operator%22%3A%22contains%22%2C%22property_value%22%3A%22component-share%22%7D%5D&api_key=${process.env.KEEN_KEY}`)).data.result;
+  const topGraphics = (await axios(`https://keen-proxy.ft.com/3.0/projects/56671212d2eaaa6dd6483dae/queries/count?event_collection=cta%3Aclick&group_by=%5B%22context.imageuuid%22%2C%22page.location.pathname%22%2C%22content.publishedDate%22%2C%22content.title%22%2C%22content.uuid%22%2C%22content.uuid%22%5D&timezone=UTC&timeframe=this_14_days&filters=%5B%7B%22property_name%22%3A%22click.dataTrackablePath%22%2C%22operator%22%3A%22contains%22%2C%22property_value%22%3A%22component-share%22%7D%5D&api_key=${process.env.KEEN_KEY}`)).data.result;
 
   const filteredTopGraphics = topGraphics.filter(n => n['context.imageuuid'] !== null)
     .sort((a, b) => b.result - a.result)
