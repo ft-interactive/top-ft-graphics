@@ -3,10 +3,21 @@
 
 {% block article_body %}
 
+<div class="o-grid-container o-grid-container--bleed">
+  <div class="o-grid-row" id="options-sort">
+    <div data-o-grid-colspan="12">
+      <div class="o-buttons__group">
+        <button class="o-buttons" aria-selected="true">Share count</button>
+        <button class="o-buttons">Publish date</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="o-grid-container">
   <div class="o-grid-row" id="topgraphics">
-    {% for graphic in filteredTopGraphics %}
-    <div class="topgraphic" data-o-grid-colspan="12 S6 M3">
+    {% for graphic in sortedTopGraphics %}
+    <div class="topgraphic" data-o-grid-colspan="12 S6 M3" data-sharecount="{{ graphic.result }}" data-publishdate="{{ graphic['content.publishedDate'] }}">
       <a target="_blank" href="https://ft.com{{graphic['page.location.pathname']}}">
         <img src="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A{{graphic['context.imageuuid']}}?source=ig" />
         <h4>{{ graphic['content.title'] }}</h4>

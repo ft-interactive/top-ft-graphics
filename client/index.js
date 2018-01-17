@@ -1,5 +1,17 @@
 import './styles.scss';
 
+Array.from(document.querySelectorAll('#options-sort button')).forEach((button) => {
+  button.addEventListener('click', function toggle() {
+    document.querySelectorAll('#options-sort button').setAttribute('aria-selected', false);
+
+    if (this.getAttribute('aria-selected') === 'true') {
+      this.setAttribute('aria-selected', false);
+    } else {
+      this.setAttribute('aria-selected', true);
+    }
+  });
+});
+
 /*
   TODO: delete this comment
 
